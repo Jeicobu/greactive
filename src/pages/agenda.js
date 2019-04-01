@@ -15,10 +15,15 @@ const AgendaPage = () => (
         defaultTab="friday"
         onChange={(tabId) => { console.log(tabId) }}
       >
-        <TabList className='agenda-tabs'>
+        <TabList className='agenda-tabs desktop'>
           <Tab className='agenda-tab' tabFor="friday">Friday</Tab>
           <Tab className='agenda-tab' tabFor="saturday">Saturday</Tab>
           <Tab className='agenda-tab' tabFor="sunday">Sunday</Tab>
+        </TabList>
+				<TabList className='agenda-tabs mobile'>
+          <Tab className='agenda-tab' tabFor="friday">Fri</Tab>
+          <Tab className='agenda-tab' tabFor="saturday">Sat</Tab>
+          <Tab className='agenda-tab' tabFor="sunday">Sun</Tab>
         </TabList>
         <TabPanel tabId="friday">
           <div className='agenda-day'>

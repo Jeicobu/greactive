@@ -4,6 +4,7 @@ import { Tabs, Tab, TabPanel, TabList } from 'react-web-tabs';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Mentor from "../components/mentor"
 
 const IndexPage = () => (
   <Layout>
@@ -29,6 +30,7 @@ const IndexPage = () => (
         <Tab className='hp-tabs-btn' tabFor="prize">Prize</Tab>
         <Tab className='hp-tabs-btn' tabFor="participants">Participants</Tab>
       </TabList>
+			<Tab className='hp-tabs-btn' tabFor="challenge">Challenge</Tab>
       <TabPanel tabId="challenge" className='hp-tabs-box'>
         <h3 className='hp-tabs-box-title'>Challenge</h3>
         <p className='basic-text hp-tabs-box-text'>
@@ -51,6 +53,7 @@ const IndexPage = () => (
           shop, SEO, SMO, mailing lists and so on.
         </p>
       </TabPanel>
+			<Tab className='hp-tabs-btn' tabFor="rules">Competition rules</Tab>
       <TabPanel tabId="rules" className='hp-tabs-box'>
         <h3 className='hp-tabs-box-title'>Rules</h3>
         <p className='basic-text hp-tabs-box-text'>
@@ -64,6 +67,7 @@ const IndexPage = () => (
           will be explained on the hackathon.
         </p>
       </TabPanel>
+			<Tab className='hp-tabs-btn' tabFor="prize">Prize</Tab>
       <TabPanel tabId="prize" className='hp-tabs-box'>
         <h3 className='hp-tabs-box-title'>Prize</h3>
         <p className='basic-text hp-tabs-box-text'>
@@ -74,6 +78,7 @@ const IndexPage = () => (
           said, there will be prize that can change a life. Maybe not yours though.
         </p>
       </TabPanel>
+			<Tab className='hp-tabs-btn' tabFor="participants">Participants</Tab>
       <TabPanel tabId="participants" className='hp-tabs-box'>
         <h3 className='hp-tabs-box-title'>Participants</h3>
         <p className='basic-text hp-tabs-box-text'>
@@ -88,16 +93,17 @@ const IndexPage = () => (
     </Tabs>
     <div className='mentors container'>
       <div className='mentors-wrapper'>
-        <div className='mentor'>
-          <div className='mentor-imgWrapper'><img className='mentor-img' src="https://d2cmuesa4snpwn.cloudfront.net/public/427478639/large" alt="mentor" /></div>
-          <a className='mentor-name' href="https://jan.vlnas.cz/">Jan Vlnas</a>
-          <div className='mentor-description'>Experienced hackathon masterblaster</div>
-        </div>
-        <div className='mentor'>
-          <div className='mentor-imgWrapper'><img className='mentor-img' src="https://avatars2.githubusercontent.com/u/8451755?s=460&v=4" alt="mentor" /></div>
-          <a className='mentor-name' href="https://github.com/kokes">Ondrej Kokes</a>
-          <div className='mentor-description'>Ideation & Pitch Preparation</div>
-        </div>
+				<Mentor
+					link={'https://jan.vlnas.cz/'}
+					name={'Jan Vlnas'}
+					img={'https://d2cmuesa4snpwn.cloudfront.net/public/427478639/large'}
+					description={'Experienced hackathon masterblaster'}
+				/>
+				<Mentor
+					link={'https://github.com/kokes'}
+					name={'Ondrej Kokes'}
+					img={'https://avatars2.githubusercontent.com/u/8451755?s=460&v=4'}
+					description={'Ideation & Pitch Preparation'} />
       </div>
       <div className='mentors-info'>
         <h2 className='mentors-info-title section-title'>Mentors</h2>
