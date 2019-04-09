@@ -155,21 +155,28 @@ h4 {
   font-family: 'Montserrat';
   text-decoration: none;
 	text-transform: uppercase;
+	transition: color .25s, border .25s;
+
+	&:hover {
+		color: #FFFFFF;
+		border-bottom: 8px solid @cl-secondary;
+	}
 
 	&.active {
 		border-bottom: 8px solid @cl-secondary;
 		color: #FFFFFF;
+		cursor: default;
 	}
 }
 
 .header-logo {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   display: inline-block;
-  width: 195px;
-	height: 40px;
+  width: 171px;
+	height: 24px;
 	z-index: 20;
 }
 
@@ -187,13 +194,20 @@ h4 {
   color: @cl-primary;
   font-size: 15px;
   font-weight: 700;
-  text-transform: uppercase;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: color .25s, border-color .25s;
+
+	&:hover {
+		color: @cl-secondary;
+		border-color: @cl-secondary;
+	}
 }
 
 .m-header-hamburger {
 	display: none;
 	position: absolute;
-	top: 32px;
+	top: 28px;
 	right: 16px;
 	width: 25px;
 	height: 21px;
@@ -396,7 +410,14 @@ h4 {
   color: #000000;
   text-align: center;
   line-height: 64px;
-  text-transform: uppercase;
+	text-transform: uppercase;
+	transition: color .25s, background .25s;
+	cursor: pointer;
+	
+	&:hover {
+		background: @cl-secondary;
+		color: @cl-primary;
+	}
 }
 
 .hp-tabs {
@@ -427,21 +448,39 @@ h4 {
   color: @cl-primary;
   font-family: 'Montserrat';
 	cursor: pointer;
+	transition: color .25s;
+	overflow: hidden;
 
 	&:before {
 		content: '';
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 32px;
+		transform: translateX(-296px);
+		width: 100%;
 		height: 4px;
 		background: #EDEDED;
+		transition: transform .25s;
+	}
+
+	&:hover {
+		color: @cl-secondary;
+
+		&:before {
+			transform: translateX(0);
+		}
 	}
 }
 
 .hp-tabs-btn[aria-selected=true] {
   cursor: default;
-  color: @cl-secondary;
+	color: @cl-secondary;
+	
+	&:hover {
+		&:before {
+			transform: translateX(-296px);
+		}
+	}
 }
 
 .hp-tabs-btn[aria-selected=true]:before {
@@ -456,6 +495,10 @@ h4 {
   width: 72px;
   height: 4px;
   background: @cl-secondary;
+}
+
+.hp-tabs-btn--single {
+	display: none;
 }
 
 .hp-tabs-content {
@@ -617,7 +660,12 @@ h4 {
   font-size: 23px;
   line-height: 32px;
   font-weight: 700;
-  text-decoration: none;
+	text-decoration: none;
+	transition: border-color .25s;
+	
+	&:hover {
+		border-bottom-color: transparent;
+	}
 }
 
 .appProcess {
@@ -680,7 +728,13 @@ h4 {
   color: @cl-primary;
   font-size: 22px;
   font-weight: 700;
-  text-transform: uppercase;
+	text-transform: uppercase;
+	transition: color .25s, border-color .25s;
+	
+	&:hover {
+		color: @cl-secondary;
+		border-color: @cl-secondary;
+	}
 }
 
 .venue {
@@ -752,7 +806,12 @@ h4 {
   font-size: 23px;
   line-height: 32px;
   font-weight: 700;
-  text-decoration: none;
+	text-decoration: none;
+	transition: border-color .25s;
+	
+	&:hover {
+		border-bottom-color: transparent;
+	}
 }
 
 
@@ -836,7 +895,7 @@ h4 {
 .footer-text {
   margin-bottom: 48px;
   font-size: 15px;
-  line-break: 32px;
+  line-height: 32px;
 }
 
 .footer-email {
@@ -846,7 +905,43 @@ h4 {
   font-size: 15px;
   line-height: 46px;
   color: @cl-primary;
-  text-decoration: none;
+	text-decoration: none;
+	transition: border-color .25s;
+	
+	&:hover {
+		border-bottom-color: transparent;
+	}
+}
+
+.about-intro {
+	max-width: 640px;
+	margin: 48px auto;
+}
+
+.partnership {
+	text-align: center;
+}
+
+.partnership-sbks {
+	text-decoration: none;
+	color: @cl-secondary;
+	font-weight: 700;
+}
+
+.partnership-link {
+	display: inline-block;
+	margin-top: 36px;
+	border: 3px solid @cl-primary;
+	height: 64px;
+	width: 300px;
+	font-family: 'Montserrat';
+	line-height: 58px;
+	text-decoration: none;
+	text-align: center;
+	color: @cl-primary;
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 .agenda {
@@ -877,7 +972,13 @@ h4 {
   line-height: 56px;
   font-weight: 700;
   color: @cl-primary;
-  cursor: pointer;
+	cursor: pointer;
+	transition: color .25s, border-color .25s;
+	
+	&:hover {
+		border-color: @cl-primary;
+		color: @cl-secondary;
+	}
 }
 
 .agenda-tab[aria-selected=true] {
@@ -932,6 +1033,17 @@ h4 {
 	min-height: 80px;
 	background: #F5F5F5;
 	transition: all .25s;
+	cursor: pointer;
+
+	&:hover {
+		.faq-question {
+			color: @cl-primary;
+		}
+
+		.faq-arrow {
+			fill: @cl-primary;
+		}
+	}
 
 	&.isOpen {
 		background: #FFFFFF;
@@ -950,15 +1062,17 @@ h4 {
 }
 
 .faq-question {
+	position: relative;
 	display: flex;
 	align-items: center;
+	padding-right: 48px;
 	height: 80px;
 	font-family: 'Montserrat';
 	font-size: 23px;
 	line-height: 32px;
 	color: @cl-secondary;
 	font-weight: 700;
-	cursor: pointer;
+	transition: color .25s;
 }
 
 .faq-answer {
@@ -966,6 +1080,33 @@ h4 {
 	opacity: 0;
 	pointer-events: none;
 	transition: all .25s;
+}
+
+.faq-arrow {
+	position: absolute;
+	top: 50%;
+	right: 4px;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	fill: @cl-secondary;
+	transition: transform .25s, fill .25s;
+
+	&.open {
+		transform: translateY(-50%) rotate(180deg);
+		fill: @cl-primary;
+	}
+}
+
+.faq-link {
+	margin-left: 3px;
+	color: @cl-secondary;
+	text-decoration: none;
+	transition: color .25s;
+
+	&:hover {
+		color: @cl-primary;
+	}
 }
 
 .mobile-menu {
@@ -1013,7 +1154,9 @@ h4 {
 
 	.header-logo {
 		left: 16px;
-		top: 24px;
+		top: 28px;
+		width: 148px;
+		height: 21px;
 		transform: none;
 	}
 
@@ -1107,16 +1250,28 @@ h4 {
     margin-right: 0;
     border-left: 16px solid #FFFFFF;
     border-right: 16px solid #FFFFFF;
-    overflow: hidden;
-  }
 
-  .footer:before {
-    left: -214px;
-  }
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: 116px;
+			left: -229px;
+			background: url('../images/mob-footer-left.svg');
+			background-size: cover;
+			width: 306px;
+			height: 306px;
+		}
 
-  .footer:after {
-		bottom: -120px;
-    right: -200px;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -50px;
+			right: -16px;
+			background: url('../images/mob-footer-right.svg');
+			background-size: cover;
+			width: 112px;
+			height: 145px;
+		}
 	}
 
 	.hp-tabs {
@@ -1141,9 +1296,14 @@ h4 {
 	}
 
 	.hp-tabs-btn {
+		display: none;
 		height: 64px;
 		font-size: 24px;
 		line-height: 32px;
+	}
+
+	.hp-tabs-btn--single {
+		display: block;
 	}
 
   .mentors {
@@ -1290,6 +1450,7 @@ h4 {
 	}
 
 	.faq-question {
+		padding-right: 32px;
 		font-size: 17px;
 		line-height: 24px;
 	}
